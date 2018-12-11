@@ -1,11 +1,5 @@
-testOne = new Test();
+note = new Note("sample text")
 
-// my testname.runTest(classNME, parameter for the class, property of the class, parameters of the property, and the expected Result
-  constructor() {
+Test("Test 1: Should return 'sample text'", expect(note.text).toEqual("sample text"));
 
-  }
-})
-
-testOne.runTest("Note", "Our favourite language is Ruby.", "text", "", "Our favourite language is Ruby.")
-
-testOne.runTest("Note", "Our favourite language is Ruby.", "returnText", "()", "Our favourite language is Ruby.")
+Test("Test 2: Should return 'sample text'", expect(note.returnText()).toEqual("sample tex"));

@@ -1,31 +1,14 @@
-function Test() {
-
+function Test(description, test) {
+  console.log(description);
+  console.log(test);
 }
 
-Test.prototype.runTest = function(klass, klassParam, prop, propParam, expectation) {
-  var kParam = '';
-  var pParam = '';
-  if (klassParam != '') {
-    if (klassParam === "()") {
-      kParam = `()`; }
-    else {
-      kParam = `('${klassParam}')`;
-    }
-  }
-  var testClass = eval(
-    `new ${klass}${kParam};`
-    );
-  if (propParam != '') {
-    if (propParam === "()") {
-      pParam = `()`; }
-    else {
-      pParam = `('${propParam}')`;
-    }
-  }
-  var testResult = eval(
-    `testClass.${prop}${pParam};`
-    );
-  var testExpectation = expectation;
-  if (testResult === testExpectation) { console.log('Test passed.'); }
-  else { console.log('Test failed.'); }
+function expect(input) { 
+  this.output = input;
+  return this; 
+}
+
+function toEqual(expectation) { 
+  if (this.output === expectation) { return "Expected: " + expectation + "\nOutput: " + this.output + "\nTest passed."; }
+  else { return "Expected: " + expectation + "\nOutput: " + this.output + "\nTest failed."}
 }
