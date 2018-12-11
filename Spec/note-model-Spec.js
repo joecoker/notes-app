@@ -1,5 +1,15 @@
-note = new Note("sample text")
+describe("Note", function() {
+  describe(".text", function() {
+    it("Should return 'Hello World'", function() {
+      var note = new Note("Hello World");
+      expect(note.text).toEqual("Hello World");
+    }) 
+  })
 
-Test("Test 1: Should return 'sample text'", expect(note.text).toEqual("sample text"));
-
-Test("Test 2: Should return 'sample text'", expect(note.returnText()).toEqual("sample tex"));
+  describe(".returnText()", function() {
+    it("Should return 'Hello World'", function() {
+      var note = new Note("Hello World");
+      expect(note.returnText()).toEqual("Hello World");
+    })
+  })
+})
