@@ -1,14 +1,15 @@
 describe("Note", function() {
+  
   describe(".text", function() {
     it("Should return 'Hello World'", function() {
-      var note = new Note("Hello World");
+      SpecSetup();
       expect(note.text).toEqual("Hello World");
     }) 
   })
 
   describe(".returnText()", function() {
     it("Should return 'Hello World'", function() {
-      var note = new Note("Hello World");
+      SpecSetup();
       expect(note.returnText()).toEqual("Hello World");
     })
   })

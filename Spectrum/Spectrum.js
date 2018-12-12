@@ -1,3 +1,13 @@
+// Example layout:
+
+// describe("", function() {
+//   describe("", function() {
+//     it("", function() {
+//       expect().toEqual();
+//     })
+//   })
+// })
+
 function describe(description, func) {
   console.log(description);
   func();
@@ -27,7 +37,7 @@ function toEqual(expectation) {
 
 function isArray(expectation) {
   message = ("Expected: isArray() === " + expectation +
-    "\nOutput: isArray() === " + Array.isArray(this.output));
+    "\nOutput: isArray() === " + (Array.isArray(this.output)));
 
   if (Array.isArray(this.output) === expectation) {
     console.log(message + "\nTest passed.");
@@ -37,10 +47,14 @@ function isArray(expectation) {
   }
 }
 
-// Example layout:
+function isObject(expectation) {
+  message = ("Expected: isObject() === " + expectation +
+  "\nOutput: isArray() === " + (typeof this.output === "object"));
 
-// describe("", function() {
-//   it("", function() {
-//     expect().toEqual();
-//   })
-// })
+  if ((typeof this.output === "object") === expectation) {
+    console.log(message + "\nTest passed.");
+  }
+  else {
+    console.log(message + "\nTest failed.");
+  }
+}
