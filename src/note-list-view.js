@@ -1,17 +1,22 @@
-function ListView(noteList) {
-  this.view = noteList;
-}
+(function (exports) {
 
-ListView.prototype.htmlString = function() {
-  var i;
-  var string = "";
-  var numberOfNotes = this.view.notes.length;
-  
-  string += "<ul>";
-  for (i = 0; i < numberOfNotes; i++) {
-    string += "<li><div>" + this.view.notes[i].text + "</div></li>";
+  function ListView(noteList) {
+    this.view = noteList;
   }
-  string += "</ul>";
-  
-  return string;
-}
+
+  ListView.prototype.htmlString = function() {
+    var i;
+    var string = "";
+    var numberOfNotes = this.view.notes.length;
+    
+    string += "<ul>";
+    for (i = 0; i < numberOfNotes; i++) {
+      string += "<li><div>" + this.view.notes[i].text + "</div></li>";
+    }
+    string += "</ul>";
+    
+    return string;
+  };
+
+  exports.ListView = ListView;
+})(this);
