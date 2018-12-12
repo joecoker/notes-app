@@ -37,5 +37,17 @@ describe("ListView", function() {
         "</ul>"
       );
     })
+
+    it("Should return html of no more than 20 characters", function() {
+      longNotes = new NoteList()
+      longNotes.createNote("qwertyuiopasdfghjklzxcvbnm");
+      truncView = new ListView(longNotes)
+      expect(truncView.htmlString()).toEqual(
+        "<ul>" +
+          "<li><div>qwertyuiopasdfghjklz</div></li>" +
+        "</ul>"
+      );
+    })
+
   })
 })
