@@ -1,11 +1,20 @@
-function SpecSetup() {
-  note = new Note("Hello World");
-  notes = new NoteList();
-  view = new ListView(notes);
+function NoteSetup() {
+  note = new Note("A");
+  noteView = new NoteView(note);
 }
 
-function MultiNote() {
-  notes.notes.push(new Note("A"));
-  notes.notes.push(new Note("B"));
-  notes.notes.push(new Note("C"));
+function MultiNoteSetup() {
+  list.list.push(new Note("B"));
+  list.list.push(new Note("C"));
+}
+
+function ListSetup() {
+  list = new List();
+  listView = new ListView(list);
+}
+
+function ControllerSetup() {
+  list = new List();
+  list.createNote("Hello World");
+  controller = new Controller(list);
 }
